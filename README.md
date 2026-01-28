@@ -22,7 +22,6 @@ Built a serverless webhook-based system using Val.town that:
 - Detects duplicates instantly using SQLite indexing (O(1) lookups)
 - Tags all matching records automatically via Notion API
 - Requires zero maintenance after deployment
-- Processes 150k+ records in under 45 minutes
 
 ## 🚀 Key Features
 
@@ -61,9 +60,8 @@ Notion Database → Notion Automation → Val.town Webhook Handler
 **Problem:** Val.town free tier has a 1-minute execution timeout, making it impossible to process 150k+ records in a single run.
 
 **Solution:** Designed a two-phase backfill approach:
-- **Phase 1 (Local):** Runs on developer machine to fetch all pages, detect duplicates in-memory, and tag them (~15 minutes)
-- **Phase 2 (Val.town):** Scheduled Val runs in 15-minute intervals to build SQLite index incrementally (~30 minutes)
-- **Result:** Total backfill time of 25-45 minutes vs. 4-6 hours with initial approach
+- **Phase 1 (Local):** Runs on developer machine to fetch all pages, detect duplicates in-memory, and tag them
+- **Phase 2 (Val.town):** Scheduled Val runs in 15-minute intervals to build SQLite index incrementally
 
 ### Challenge 2: API Rate Limiting
 **Problem:** Notion API limits to 3 requests/second, risking 429 errors during high-volume operations.
@@ -94,7 +92,6 @@ Notion Database → Notion Automation → Val.town Webhook Handler
 - ✅ **Successfully deployed to production**
 - ✅ **Processing 150k+ records** with automated duplicate detection
 - ✅ **Zero-maintenance operation** (serverless, no infrastructure to manage)
-- ✅ **~25-45 minute backfill time** (vs. 4-6 hours with initial approach)
 - ✅ **< 1 second response time** for real-time detection
 - ✅ **Production-stable** with built-in error handling and retry logic
 
