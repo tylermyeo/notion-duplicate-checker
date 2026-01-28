@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+venv/
+__pycache__/
+
+# Environment variables
+.env
+*.env
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Data files
+*.csv
+
+# Progress files
+*-progress.json
+backfill-progress.json
+
+# Editor
+.vscode/
+.idea/

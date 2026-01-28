@@ -1,0 +1,11 @@
+{
+  "name": "notion-duplicate-checker",
+  "version": "1.0.0",
+  "description": "Notion duplicate detection system using Val.town",
+  "scripts": {
+    "install-cli": "npm install -g @valtown/val-town-cli"
+  },
+  "keywords": ["notion", "duplicate-detection", "val-town"],
+  "author": "",
+  "license": "MIT"
+}
